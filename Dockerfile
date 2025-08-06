@@ -3,7 +3,7 @@ FROM php:8.2-apache
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
-# Install system dependencies including PostgreSQL dev libs
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
@@ -15,8 +15,7 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
-    libpq-dev \
-    && docker-php-ext-install pdo pdo_mysql pdo_pgsql pgsql zip mbstring exif pcntl
+    && docker-php-ext-install pdo pdo_pgsql zip mbstring exif pcntl
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -26,6 +25,15 @@ WORKDIR /var/www/html
 
 # Copy project files
 COPY . .
+
+# ✅ Apache will serve from /var/www/html/public
+RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|' /etc/apache2/sites-available/000-default.conf
+
+# ✅ Allow .htaccess and rewrite rules
+RUN echo '<Directory /var/www/html/public>\n\
+    AllowOverride All\n\
+    Require all granted\n\
+</Directory>' >> /etc/apache2/apache2.conf
 
 # Install PHP dependencies
 RUN composer install
