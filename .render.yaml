@@ -16,18 +16,18 @@ services:
       - key: APP_DEBUG
         value: false
       - key: APP_KEY
-        sync: false  # we'll set this manually on the dashboard
+        sync: false
       - key: APP_URL
-        value: https://yemenfleet1.onrender.com  # تأكد من تعديله للرابط الفعلي بعد النشر
+        value: https://yemenfleet1.onrender.com
       - key: DB_CONNECTION
-        value: mysql
+        value: pgsql
       - key: DB_HOST
-        sync: false
+        value: dpg-d29dem7gi27c73cf1chg-a.oregon-postgres.render.com
       - key: DB_PORT
-        value: 3306
+        value: "5432"
       - key: DB_DATABASE
-        sync: false
+        value: yemenfleet_db_po9v
       - key: DB_USERNAME
-        sync: false
+        value: yemenfleet_db_po9v_user
       - key: DB_PASSWORD
-        sync: false
+        value: 7A2WmeDBevPkKfYwZnR3mi6ofKE4mZk6
