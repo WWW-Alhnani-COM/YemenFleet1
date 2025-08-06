@@ -1,18 +1,33 @@
 services:
   - type: web
-    name: laravel-app
+    name: YemenFleet1
     env: docker
     plan: free
     branch: master
     region: oregon
-    dockerfilePath: Dockerfile
-    healthCheckPath: /
+    dockerfilePath: ./Dockerfile
+    buildFilter:
+      paths:
+        - Dockerfile
+        - ./
     envVars:
       - key: APP_ENV
         value: production
-      - key: APP_KEY
-        value: YOUR_KEY_HERE
       - key: APP_DEBUG
         value: false
+      - key: APP_KEY
+        sync: false  # we'll set this manually on the dashboard
       - key: APP_URL
-        value: https://your-app.onrender.com
+        value: https://yemenfleet1.onrender.com  # تأكد من تعديله للرابط الفعلي بعد النشر
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        value: 3306
+      - key: DB_DATABASE
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
