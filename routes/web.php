@@ -289,5 +289,11 @@ Route::get('/run-migrations', function () {
 Route::get('/health', function () {
     return 'App is working!';
 });
+Route::get('/test-error', function () {
+    // جرّب تشغيل الكود اللي فيه خطأ داخلي هنا
+    // مثلاً جلب المستخدم الأول:
+    return \App\Models\User::first();
+});
+
 
 
