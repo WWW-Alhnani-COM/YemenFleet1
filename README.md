@@ -57,8 +57,8 @@ graph TD
 🚀 كيفية التنصيب
 bash
 # استنساخ المستودع
-git clone https://github.com/Eng-Ayman-Twfaq/Yemen-Fleet-Dashboard.git
-cd Yemen-Fleet-Dashboard
+git clone https://github.com/WWW-Alhnani-COM/YemenFleet1.git
+cd YemenFleet1
 
 # تثبيت الاعتمادات
 composer install
@@ -84,4 +84,4 @@ Code
 
 
 📞 الدعم الفني
-<p align="center"> <a href="mailto:ayman.tawfaq.developers@gmail.com"> <img src="https://img.shields.io/badge/Email-support%40yemenfleet.com-blue?style=for-the-badge&logo=gmail"> </a> <a href="tel:+967770883615"> <img src="https://img.shields.io/badge/Phone-%2B967770883615-green?style=for-the-badge&logo=whatsapp"> </a> </p><div align="center" style="margin-top: 40px;"> <sub>تم تطوير نظام Yemen Fleet بواسطة <a href="https://github.com/Eng-Ayman-Twfaq" style="color: #2b7df8;">AYMAN TAWFAQ</a> © 2024</sub> </div> ```
+<p align="center"> <a href="mailto:muhammadalhnani2004@gmail.com"> <img src="https://img.shields.io/badge/Email-support%40yemenfleet.com-blue?style=for-the-badge&logo=gmail"> </a> <a href="tel:+967711447801"> <img src="https://img.shields.io/badge/Phone-%2B967711447801-green?style=for-the-badge&logo=whatsapp"> </a> </p><div align="center" style="margin-top: 40px;"> <sub>تم تطوير نظام Yemen Fleet بواسطة <a href="https://github.com/WWW-Alhnani-COM" style="color: #2b7df8;">Mohammad Alhnani</a> © 2024</sub> </div> ```
