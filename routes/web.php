@@ -26,6 +26,7 @@ use App\Models\Truck;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use App\Models\Driver;
+use Illuminate\Support\Facades\Artisan;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -279,3 +280,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 Route::get('/gps/fetch', [SensorDataController::class, 'fetchFromGpsAndStore']);
 require __DIR__.'/auth.php';
+
+
+Route::get('/run-migrations', function () {
+    Artisan::call('migrate', ['--force' => true]);
+    return 'Migrations run successfully!';
+});
+
