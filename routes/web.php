@@ -286,4 +286,8 @@ Route::get('/run-migrations', function () {
     Artisan::call('migrate', ['--force' => true]);
     return 'Migrations run successfully!';
 });
+Route::get('/health', function () {
+    return 'App is working!';
+});
+
 
